@@ -1,0 +1,31 @@
+.logo_cart{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    position: relative;
+}
+
+.logo_cart:hover{
+    color: #efe22b;
+}
+
+.cart_title{
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: #f44336;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    right: -19px;
+    top: -25%;
+}
+
+.cart_count{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+}

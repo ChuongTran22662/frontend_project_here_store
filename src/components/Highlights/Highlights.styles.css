@@ -1,0 +1,64 @@
+.highlight_container{
+    width: 1200px;
+    margin: auto;
+}
+
+.highlisht_title{
+    position: relative;
+    margin: 10px 0 20px;
+}
+
+.highlisht_title::before{
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #7b5450;
+    z-index: 1;
+}
+
+.title{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #4d4d4d;
+    text-align: center;
+    display: inline-block;
+    padding: 0 12px 4px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    margin: 0;
+    letter-spacing: 0.08em;
+    font-family: "Montserrat",sans-serif;
+    line-height: 1.3;
+    font-weight: 800;
+    margin-left: 513px;
+}
+
+.banner_hot{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.item_banner{
+    width: 24.5%;
+    background-image: url("../../assets/bgr.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 406px;
+    max-width: 100%;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    transition: transform .8s ease;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.item_banner:hover{
+    transform: scale(1.06);
+    opacity: 1;
+}

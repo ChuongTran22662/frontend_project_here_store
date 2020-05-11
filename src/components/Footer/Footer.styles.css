@@ -1,0 +1,193 @@
+.footer{
+    width: 100%;
+    padding-bottom: 0;
+    padding-top: 40px;
+    height: 320px;
+    background-color: #333333;
+    margin-top: 40px;
+}
+
+.footer_container{
+    width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_contact{
+    width: 25%;
+}
+
+.title_contact{
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.link_contact{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.link_contact_fa{
+    background: rgba(255,255,255,.13) none repeat scroll 0 0;
+    border-radius: 50px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 4px;
+    color: #acacac;
+    cursor: pointer;
+}
+
+.link_contact_fa:hover{
+    color: #fae13c;
+}
+
+.link_contact_ins{
+    background: rgba(255,255,255,.13) none repeat scroll 0 0;
+    border-radius: 50px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 4px;
+    color: #acacac;
+    cursor: pointer;
+}
+
+.link_contact_ins:hover{
+    color: #fae13c;
+}
+
+
+.footer_system{
+    width: 25%;
+}
+
+.title_system{
+    color: #fff;
+    margin-bottom: 30px;
+    color: 14px;
+}
+
+.system_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.system_list_item{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+    color: #acacac;
+    position: relative;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.system_list_item:hover{
+    color: #fae13c;
+}
+
+.footer_help{
+    width: 25%;
+}
+
+.title_help{
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.help_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.help_list_item{
+    color: #acacac;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.help_list_item:hover{
+    color: #fae13c;
+}
+
+.footer_company{
+    width: 25%;
+}
+
+.title_company{
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.company_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.company_list_item{
+    color: #acacac;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.company_list_item_confirm{
+    background-image: url("../../assets/bct.png");
+    width: 150px;
+    height: 55px;
+    margin-top: 36px;
+}
+
+.company_list_item:hover{
+    color: #fae13c;
+}
+
+.footer_copyright{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    justify-content: center;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.footer_copyright_title{
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+    color: #fff;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.footer_copyright_title a{
+    color: #fae13c;
+    text-decoration: none;
+}
