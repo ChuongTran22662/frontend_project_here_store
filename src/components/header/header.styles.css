@@ -6,6 +6,7 @@
     display: flex;
     position: fixed;
     z-index: 9999;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.15);
 }
 
 .header_container{
@@ -31,6 +32,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.navigation_menu{
 }
 
 .menu_container{
