@@ -1,0 +1,16 @@
+.search_container{
+    position: absolute;
+    top: 14px;
+    right: 133px;
+    z-index: 99999;
+}
+
+.input_search_container{
+    padding: 10px;
+    height: 36px;
+    width: 250px;
+    border: 1px solid #e1e1e1;
+    color: #1c1c1c;
+    font-size: 1em;
+    outline: none;
+}

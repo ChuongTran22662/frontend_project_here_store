@@ -1,0 +1,65 @@
+.forget_page{
+    width: 100%;
+    height: 402px;
+    display: block;
+}
+
+.forget_page_container{
+    padding: 30px 0;
+}
+
+.forget_page_container_main{
+    width: 1200px;
+    margin: auto;
+    margin-top: 65px;
+}
+
+.forget_page_title{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.label_forget{
+    text-align: center;
+    color: red;
+    font-size: 13px;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.forget_pass_form{
+    text-align: center;
+}
+
+.input_forget_pass{
+    padding: 5px;
+    height: 40px;
+    width: 255px;
+    margin: 10px;
+    border: 1px solid #e1e1e1;
+    color: #1c1c1c;
+    font-size: 1em;
+    outline: none;
+}
+
+.button_forget_pass{
+    margin-top: 20px;
+    color: #fff;
+    line-height: 38px;
+    padding: 0 20px;
+    background: #fae13c;
+    height: 40px;
+    outline: none !important;
+    cursor: pointer;
+    border: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 13px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
