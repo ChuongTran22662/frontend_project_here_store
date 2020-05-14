@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.zxc{
+    color: #333333;
+}
+
 .logo_cart:hover{
     color: #efe22b;
 }

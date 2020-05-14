@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ForgetPass.styles.css';
+import './forget-pass.styles.css';
 
 export default class ForgetPass extends Component {
     render() {

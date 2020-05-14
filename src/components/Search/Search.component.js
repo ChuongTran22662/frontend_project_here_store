@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Search.styles.css';
+import React, { Component } from './node_modules/react';
+import './search.styles.css';
 
 export default class Search extends Component {
   render() {

@@ -1,0 +1,106 @@
+.cart-checkout_page_item_item_cart-checkout{
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    float: left;
+}
+
+.cart-checkout_page_item_item_cart-checkout_img{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 17%;
+}
+
+.cart-checkout_page_item_item_cart-checkout_name{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 33%;
+}
+
+.cart-checkout_page_item_item_cart-checkout_price{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 15%;
+}
+
+.cart-checkout_page_item_item_cart-checkout_count{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 14%;
+}
+
+.input_count_cart-checkout{
+    width: 60%;
+}
+
+.input_count_cart-checkout_value{
+    position: static;
+    display: inline-block;
+    border: 1px solid #ddd;
+    height: 40px;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    border-radius: 20px;
+    outline: none;
+    padding-top: 7px;
+}
+
+.cart-checkout_page_item_item_cart-checkout_money{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 15%;
+}
+
+.cart-checkout_page_item_item_cart-checkout_delete{
+    line-height: 20px;
+    vertical-align: top;
+    height: 155px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    float: left;
+    width: 6%;
+}

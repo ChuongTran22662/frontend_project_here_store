@@ -1,0 +1,94 @@
+.cartitem_page{
+    width: 100%;
+    display: block;
+    margin-top: 100px;
+}
+
+.cartitem_container{
+    width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.cartitem_collection{
+    width: 25%;
+}
+
+.cartitem_collection_main_title{
+    text-transform: uppercase;
+}
+
+.cartitem_collection_main_title_text{
+    font-size: 19px;
+    margin: 0;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+}
+
+.cartitem_collection_main_content{
+    margin-top: 5px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.cartitem_collection_main_content_li{
+    padding: 10px 15px;
+    border-bottom: solid 1px #ebebeb;
+}
+
+.cartitem_collection_main_content_li:hover{
+    color: #fae13c ;
+    cursor: pointer;
+}
+
+.cartitem_collection_main_content_li i{
+    margin-right: 10px;
+}
+
+.cartitem_content{
+    width: 75%;
+    display: block;
+    margin-left: 10px;
+}
+
+.cartitem_content_content{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.cartitem_content_title{
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.cartitem_content_title_name{
+    font-size: 21px;
+    margin: 0;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+.cartitem_content_title_number{
+    font-size: 13px;
+    font-family: Roboto;
+    padding-top: 7px;
+}
+
+.cartitem_content_content{
+    width: 100%;
+}
+
+.product_item{
+    width: 32.3333%;
+    float: left;
+    margin-top: 10px;
+    border: none;
+    margin-right: 8px;
+}

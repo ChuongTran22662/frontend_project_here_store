@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Highlights.styles.css';
+import './highlights.styles.css';
 
-export default class Highlights extends Component {
+export default class HighLights extends Component {
     render() {
         return (
             <div className="highlight_container">

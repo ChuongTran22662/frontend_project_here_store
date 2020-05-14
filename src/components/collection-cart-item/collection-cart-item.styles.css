@@ -1,0 +1,15 @@
+.cartitem_collection_main_content{
+    margin-top: 0;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    padding: 0 20px;
+}
+
+.cartitem_collection_main_content_li{
+    position: relative;
+    clear: left;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-bottom: solid 1px #ebebeb;
+}

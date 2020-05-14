@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Bgr.styles.css';
+import './bgr.styles.css';
 
 export default class Bgr extends Component {
     render() {

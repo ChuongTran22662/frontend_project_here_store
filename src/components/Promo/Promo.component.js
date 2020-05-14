@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Promo.styles.css';
+import './promo.styles.css';
 
 export default class Promo extends Component {
     render() {

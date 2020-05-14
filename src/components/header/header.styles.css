@@ -54,6 +54,8 @@
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
+    text-decoration: none;
+    color: #333333;
 }
 
 .link:hover{
@@ -77,10 +79,14 @@
     margin-right: 40px;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
+    color: #333333;
 }
 
 .signin{
     cursor: pointer;
+    text-decoration: none;
+    color: #333333;
 }
 
 .login:hover{
