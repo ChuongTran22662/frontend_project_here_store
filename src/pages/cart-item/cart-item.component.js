@@ -3,8 +3,23 @@ import './cart-item.styles.css';
 import ProductItem from '../../components/product-item/product-item.component';
 import CollectionCartItem from '../../components/collection-cart-item/collection-cart-item.component';
 
-export default class CartItem extends Component {
+import { connect } from "react-redux";
+
+class CartItem extends Component {
   render() {
+
+    const { match, cartItems } = this.props;
+
+    var obj = {}
+
+    cartItems.find(cartitem => {
+      if (cartitem.routename === match.params.collectionId) {
+        obj = cartitem;
+      }
+    })
+
+    var items = obj.items;
+
     return (
       <div className="cartitem_page">
         <div className="bgr_cart"></div>
@@ -21,15 +36,11 @@ export default class CartItem extends Component {
               <div className="cartitem_content_title_number">(373 sản phẩm)</div>
             </div>
             <div className="cartitem_content_content">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
+              {
+                items.map((item, index) => {
+                  return <ProductItem key={index} item={item} />
+                })
+              }
             </div>
           </div>
         </div>
@@ -37,3 +48,11 @@ export default class CartItem extends Component {
     );
   }
 }
+
+const mapStateToprops = state => {
+  return {
+    cartItems: state.cart.cartItems
+  }
+}
+
+export default connect(mapStateToprops, null)(CartItem);

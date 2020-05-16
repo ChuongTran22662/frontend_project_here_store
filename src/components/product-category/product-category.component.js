@@ -1,66 +1,66 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './product-category.styles.css';
 
-import ProductItem from '../product-item/product-item.component';
+import { connect } from 'react-redux';
 
-export default class ProductCategory extends Component {
+import ProductItem from '../product-item/product-item.component';
+import { actFetchCartItemsRequest } from '../../redux/cart/cart.actions';
+
+class ProductCategory extends Component {
+
+  componentWillMount() {
+    this.props.actFetchCartItems();
+  }
+
   render() {
+
+    const { cartItems, history, match } = this.props;
+
     return (
       <div>
-        <div className="product_container">
-          <div className="product_title">
-            <Link className="product_name" to="/cartitem">ÁO</Link>
-          </div>
-          <div className="productCategory">
-            <div className="productCategory_bor">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-            </div>
-          </div>
-        </div>
-        <div className="product_container">
-          <div className="product_title">
-            <Link className="product_name" to="/cartitem">ÁO</Link>
-          </div>
-          <div className="productCategory">
-            <div className="productCategory_bor">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-            </div>
-          </div>
-        </div>
-        <div className="product_container">
-          <div className="product_title">
-            <Link className="product_name" to="/cartitem">ÁO</Link>
-          </div>
-          <div className="productCategory">
-            <div className="productCategory_bor">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-            </div>
-          </div>
-        </div>
-        <div className="product_container">
-          <div className="product_title">
-            <Link className="product_name" to="/cartitem">ÁO</Link>
-          </div>
-          <div className="productCategory">
-            <div className="productCategory_bor">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-            </div>
-          </div>
-        </div>
+        {
+          cartItems.map((cartitem, index) => {
+
+            return (
+              <div className="product_container" key={index}>
+                <div className="product_title">
+                  <div className="product_name" onClick={() => history.push(`/cart/${cartitem.routename}`)}>{cartitem.title}</div>
+                </div>
+                <div className="productCategory">
+                  <div className="productCategory_bor">
+                    {
+                      cartitem.items.map((i, index) => {
+                        if (index < 4) {
+                          return (
+                            <ProductItem item={i} key={index} />
+                          )
+                        }
+                      })
+                    }
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cart.cartItems
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actFetchCartItems: () => {
+      return dispatch(actFetchCartItemsRequest());
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductCategory));
