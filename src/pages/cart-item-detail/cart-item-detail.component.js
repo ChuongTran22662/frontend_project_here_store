@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import './cart-item-detail.styles.css';
 import CollectionCartItem from '../../components/collection-cart-item/collection-cart-item.component';
+import { connect } from 'react-redux';
 
-export default class CartItemDetail extends Component {
+class CartItemDetail extends Component {
+
   render() {
+
+    const { match, cartItems } = this.props;
+    var obj = {};
+
+    cartItems.map((cartitem, index) => {
+      cartitem.items.map((item,index) => {
+        if(item.id === match.params.cartDetailId){
+          obj = item
+        }
+      })
+    })
+
+    console.log(obj)
+
     return (
       <div className="cartitem_detail_page">
         <div className="bgr_cart"></div>
@@ -16,15 +32,15 @@ export default class CartItemDetail extends Component {
           </div>
           <div className="cartitem_detail_content">
             <div className="cartitem_detail_content_left">
-              <div className="cartitem_detail_content_left_img"></div>
+              <div className="cartitem_detail_content_left_img" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
               <div className="cartitem_detail_content_left_item">
-                <div className="cartitem_detail_content_left_img_item"></div>
-                <div className="cartitem_detail_content_left_img_item"></div>
-                <div className="cartitem_detail_content_left_img_item"></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
               </div>
             </div>
             <div className="cartitem_detail_content_right">
-              <div className="cartitem_detail_content_right_title">ÁO PHÔNG CHỮ 23A56</div>
+              <div className="cartitem_detail_content_right_title">{obj.name}</div>
               <div className="cartitem_detail_content_right_des">
                 Thương hiệu
                 <span>Khác</span>
@@ -34,7 +50,7 @@ export default class CartItemDetail extends Component {
               </div>
               <div className="cartitem_detail_content_right_price">
                 Giá :
-                <span>179,000 VNĐ</span>
+                <span>{obj.price} 000 VNĐ</span>
               </div>
               <div className="cartitem_detail_content_right_color">
                 <div className="cartitem_detail_content_right_color_title">Chọn màu sắc :</div>
@@ -73,3 +89,11 @@ export default class CartItemDetail extends Component {
     );
   }
 }
+
+const mapStateToprops = state => {
+  return {
+    cartItems: state.cart.cartItems
+  }
+}
+
+export default connect(mapStateToprops, null)(CartItemDetail);

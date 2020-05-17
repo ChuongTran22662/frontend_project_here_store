@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import HomePage from './pages/homepage/homepage.component';
 import CartPage from './pages/cart/cart.component';
+import CartDetail from './pages/cart-detail/cart-detail.component';
 
 class App extends React.Component {
 
@@ -29,6 +30,7 @@ class App extends React.Component {
           <Route exact path="/cart-checkout" component={CartCheckout} />
           <Route exact path="/forgetpass" component={ForgetPass} />
           <Route path="/cart" component={CartPage} />
+          <Route path='/cart-detail' component={CartDetail} />
           <Route exact path="/cartitem-detail" component={CartItemDetail} />
         </Switch>
         <Footer />

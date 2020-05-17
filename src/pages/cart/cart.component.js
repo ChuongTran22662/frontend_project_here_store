@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 const CartPage = ({ match }) => {
+
     return (
         <div>
             <Route exact path={`${match.path}/:collectionId`} component={CartItem} />

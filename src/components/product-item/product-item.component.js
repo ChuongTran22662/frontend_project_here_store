@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import './product-item.styles.css';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import {addToCart} from '../../redux/cartcheckout/cartcheckout.actions'
+import { connect } from 'react-redux'
 
-export default class ProductItem extends Component {
+class ProductItem extends Component {
     render() {
 
-        const { item } = this.props;
+        const { item, history, addItem } = this.props;
 
         return (
             <div className="product_item">
-                <Link to="/cartitem-detail"><div className="product_item_img"  style={{ backgroundImage: `url(${item.imageurl})` }}></div></Link>
+                <div className="product_item_cover">
+                    <div className="product_item_img" style={{ backgroundImage: `url(${item.imageurl})` }} onClick={() => history.push(`/cart-detail/${item.id}`)}></div>
+                    <button className="button_add_to_cart" onClick={() => addItem(item)}>
+                        Add To Cart
+                    </button>
+                </div>
                 <div className="product_item_title">
                     <div className="product_item_title_name">{item.name}</div>
                     <div className="product_item_title_price">{item.price} 000 VNĐ</div>
@@ -18,3 +25,11 @@ export default class ProductItem extends Component {
         );
     }
 }
+
+const mapDispatchToprops = dispatch => {
+    return {
+        addItem: item => dispatch(addToCart(item))
+    }
+}
+
+export default withRouter(connect(null, mapDispatchToprops)(ProductItem));
