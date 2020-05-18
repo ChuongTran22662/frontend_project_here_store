@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import './cart-checkout.styles.css';
 import CartCheckoutItem from '../../components/cart-checkout-item/cart-checkout-item.component';
+import { connect } from 'react-redux';
 
-export default class CartCheckout extends Component {
+class CartCheckout extends Component {
     render() {
+
+        const { cartCheckouts } = this.props;
+
+        var sumPrice = 0;
+
+        cartCheckouts.map(i => {
+            sumPrice += JSON.parse(i.price) * i.quantity;
+            return 0;
+        })
+
+
         return (
             <div className="cart-checkout_page">
                 <div className="bgr_cart-checkout"></div>
@@ -19,14 +31,18 @@ export default class CartCheckout extends Component {
                             <div className="cart-checkout_page_item_title_delete">Xóa</div>
                         </div>
                         <div className="cart-checkout_page_item_item">
-                            <CartCheckoutItem />
-                            <CartCheckoutItem />
-                            <CartCheckoutItem />
+                            {
+                                cartCheckouts.map((cart, index) => {
+                                    return (
+                                        <CartCheckoutItem key={index} cartItem={cart} />
+                                    )
+                                })
+                            }
                         </div>
                         <div className="cart-checkout_page_caculator">
                             <div className="title_cart-checkout_price">
                                 <div className="sum_title">Tổng tiền :</div>
-                                <div className="sum_price">995,000 VND</div>
+                                <div className="sum_price">{sumPrice} 000 VND</div>
                             </div>
                             <div className="button_cart-checkout">
                                 <button className="next_put_cart-checkout">Tiếp tục mua hàng</button>
@@ -39,3 +55,10 @@ export default class CartCheckout extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        cartCheckouts: state.cartcheckout.cartCheckouts
+    }
+}
+export default connect(mapStateToProps, null)(CartCheckout);

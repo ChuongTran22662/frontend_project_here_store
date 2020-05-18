@@ -16,6 +16,9 @@
     flex-direction: column;
     float: left;
     width: 17%;
+
+    background-size: cover;
+    background-position: center;
 }
 
 .cart-checkout_page_item_item_cart-checkout_name{
@@ -75,6 +78,12 @@
     border-radius: 20px;
     outline: none;
     padding-top: 7px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow{
+    cursor: pointer;
 }
 
 .cart-checkout_page_item_item_cart-checkout_money{
@@ -103,4 +112,5 @@
     flex-direction: column;
     float: left;
     width: 6%;
+    cursor: pointer;
 }

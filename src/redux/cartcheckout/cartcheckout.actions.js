@@ -6,3 +6,17 @@ export const addToCart = item => {
         payload: item
     }
 };
+
+export const clearItemFromCart = item => {
+    return {
+        type: CartCheckoutActionTypes.CLEAR_ITEM_FROM_CART,
+        payload: item
+    }
+};
+
+export const removeItem = item => {
+    return {
+        type: CartCheckoutActionTypes.REMOVE_ITEM,
+        payload: item
+    }
+}

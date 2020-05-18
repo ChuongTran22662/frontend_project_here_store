@@ -14,8 +14,6 @@ class HighLights extends Component {
 
         const {highlights} = this.props;
 
-        console.log(highlights)
-
         return (
             <div className="highlight_container">
                 <div className="highlisht_title">

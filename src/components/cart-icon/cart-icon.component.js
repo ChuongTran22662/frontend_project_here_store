@@ -7,7 +7,6 @@ class CartIcon extends Component {
     render() {
 
         const { cartCheckouts } = this.props;
-        console.log(cartCheckouts)
 
         return (
             <Link className="logo_cart" to="/cart-checkout">

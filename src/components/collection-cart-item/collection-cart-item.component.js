@@ -7,23 +7,15 @@ export default class CollectionCartItem extends Component {
             <ul className="cartitem_collection_main_content">
                 <li className="cartitem_collection_main_content_li">
                     <i className="fa fa-chevron-circle-right"></i>
-                    Áo
+                    Korean
               </li>
                 <li className="cartitem_collection_main_content_li">
                     <i className="fa fa-chevron-circle-right"></i>
-                    Áo
+                    China
               </li>
                 <li className="cartitem_collection_main_content_li">
                     <i className="fa fa-chevron-circle-right"></i>
-                    Áo
-              </li>
-                <li className="cartitem_collection_main_content_li">
-                    <i className="fa fa-chevron-circle-right"></i>
-                    Áo
-              </li>
-                <li className="cartitem_collection_main_content_li">
-                    <i className="fa fa-chevron-circle-right"></i>
-                    Áo
+                    Viet Nam
               </li>
             </ul>
         );

@@ -10,15 +10,15 @@ class CartItemDetail extends Component {
     const { match, cartItems } = this.props;
     var obj = {};
 
-    cartItems.map((cartitem, index) => {
-      cartitem.items.map((item,index) => {
-        if(item.id === match.params.cartDetailId){
-          obj = item
+    cartItems.map((cartitem) => {
+      cartitem.items.map((item) => {
+        if (item.id === match.params.cartDetailId) {
+          obj = item;
         }
+        return item;
       })
+      return cartitem;
     })
-
-    console.log(obj)
 
     return (
       <div className="cartitem_detail_page">
@@ -65,7 +65,15 @@ class CartItemDetail extends Component {
                 <div className="cartitem_detail_content_right_product_add">
                   <div className="cartitem_detail_content_right_product_add_title">Số lượng</div>
                   <div className="zzzzzz">
-                    <div className="cartitem_detail_content_right_product_add_count">4</div>
+                    <div className="cartitem_detail_content_right_product_add_count">
+                      <div className='arrow'>
+                        &#10094;
+                            </div>
+                      4
+                      <div className='arrow'>
+                        &#10095;
+                            </div>
+                    </div>
                     <button className="cartitem_detail_content_right_product_add_btn">THÊM VÀO GIỎ HÀNG</button>
                     <div className="cartitem_detail_content_right_product_add_like">
                       <i className="fa fa-heart-o"></i>

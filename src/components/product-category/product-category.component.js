@@ -15,12 +15,15 @@ class ProductCategory extends Component {
 
   render() {
 
-    const { cartItems, history, match } = this.props;
+    const { cartItems, history } = this.props;
+
+    console.log(cartItems)
 
     return (
       <div>
         {
           cartItems.map((cartitem, index) => {
+
 
             return (
               <div className="product_container" key={index}>

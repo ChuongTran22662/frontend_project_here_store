@@ -205,6 +205,8 @@
     text-align: center;
     outline: none;
     margin-top: 3px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .cartitem_detail_content_right_product_add_btn{
