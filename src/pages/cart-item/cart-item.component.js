@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import './cart-item.styles.css';
 import ProductItem from '../../components/product-item/product-item.component';
 import CollectionCartItem from '../../components/collection-cart-item/collection-cart-item.component';
+import { selectCartCollections } from '../../redux/cart/cart.selector';
+import { actFetchCartItemsRequest } from '../../redux/cart/cart.actions';
 
 import { connect } from "react-redux";
 
 class CartItem extends Component {
+
+  componentWillMount() {
+    this.props.actFetchCartItems();
+  }
+
   render() {
 
-    const { match, cartItems } = this.props;
-
-    var obj = {}
-
-    cartItems.find(cartitem => {
-      if (cartitem.routename === match.params.collectionId) {
-        obj = cartitem;
-      }
-    })
-
-    var items = obj.items;
+    const { cartCollections } = this.props;
 
     return (
       <div className="cartitem_page">
@@ -37,9 +34,11 @@ class CartItem extends Component {
             </div>
             <div className="cartitem_content_content">
               {
-                items.map((item, index) => {
-                  return <ProductItem key={index} item={item} />
-                })
+                cartCollections ? (
+                  cartCollections.map((item, index) => {
+                    return <ProductItem key={index} item={item} />
+                  })
+                ) : ''
               }
             </div>
           </div>
@@ -49,10 +48,18 @@ class CartItem extends Component {
   }
 }
 
-const mapStateToprops = state => {
+const mapStateToprops = (state, own) => {
   return {
-    cartItems: state.cart.cartItems
+    cartCollections: selectCartCollections(own.match.params.collectionId)(state)
   }
 }
 
-export default connect(mapStateToprops, null)(CartItem);
+const mapDispatchToProps = dispatch => {
+  return {
+    actFetchCartItems: () => {
+      return dispatch(actFetchCartItemsRequest());
+    }
+  }
+}
+
+export default connect(mapStateToprops, mapDispatchToProps)(CartItem);

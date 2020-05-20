@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import './cart-item-detail.styles.css';
 import CollectionCartItem from '../../components/collection-cart-item/collection-cart-item.component';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { selectCartDetail } from '../../redux/cart/cart.selector';
+
+import { actFetchCartItemsRequest } from '../../redux/cart/cart.actions';
 
 class CartItemDetail extends Component {
 
+  componentWillMount() {
+    this.props.actFetchCartItems();
+  }
+
   render() {
 
-    const { match, cartItems } = this.props;
-    var obj = {};
-
-    cartItems.map((cartitem) => {
-      cartitem.items.map((item) => {
-        if (item.id === match.params.cartDetailId) {
-          obj = item;
-        }
-        return item;
-      })
-      return cartitem;
-    })
+    const { cartItems } = this.props;
 
     return (
       <div className="cartitem_detail_page">
@@ -32,15 +29,15 @@ class CartItemDetail extends Component {
           </div>
           <div className="cartitem_detail_content">
             <div className="cartitem_detail_content_left">
-              <div className="cartitem_detail_content_left_img" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
+              <div className="cartitem_detail_content_left_img" style={{ backgroundImage: `url(${cartItems.imageurl})` }}></div>
               <div className="cartitem_detail_content_left_item">
-                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
-                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
-                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${obj.imageurl})` }}></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${cartItems.imageurl})` }}></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${cartItems.imageurl})` }}></div>
+                <div className="cartitem_detail_content_left_img_item" style={{ backgroundImage: `url(${cartItems.imageurl})` }}></div>
               </div>
             </div>
             <div className="cartitem_detail_content_right">
-              <div className="cartitem_detail_content_right_title">{obj.name}</div>
+              <div className="cartitem_detail_content_right_title">{cartItems.name}</div>
               <div className="cartitem_detail_content_right_des">
                 Thương hiệu
                 <span>Khác</span>
@@ -50,7 +47,7 @@ class CartItemDetail extends Component {
               </div>
               <div className="cartitem_detail_content_right_price">
                 Giá :
-                <span>{obj.price} 000 VNĐ</span>
+                <span>{cartItems.price} 000 VNĐ</span>
               </div>
               <div className="cartitem_detail_content_right_color">
                 <div className="cartitem_detail_content_right_color_title">Chọn màu sắc :</div>
@@ -98,10 +95,18 @@ class CartItemDetail extends Component {
   }
 }
 
-const mapStateToprops = state => {
+const mapStateToProps = (state, own) => {
   return {
-    cartItems: state.cart.cartItems
+    cartItems: selectCartDetail(own.match.params.cartDetailId)(state)
   }
 }
 
-export default connect(mapStateToprops, null)(CartItemDetail);
+const mapDispatchToProps = dispatch => {
+  return {
+    actFetchCartItems: () => {
+      return dispatch(actFetchCartItemsRequest());
+    }
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartItemDetail));

@@ -149,3 +149,32 @@
     color: #fff;
     outline: none;
 }
+
+.cart_empty{
+    height: 110px;
+}
+
+.cart_empty_title{
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+    color: #777;
+}
+
+.cart_empty_back_home{
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    margin-top: 13px;
+    display: block;
+    width: 100px;
+}
+
+.cart_empty_back_home:hover{
+    color:#fae13c ;
+}
+
+.cart_empty_back_home i{
+    margin-right: 3px;
+    font-size: 12px;
+}

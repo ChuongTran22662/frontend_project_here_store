@@ -1,7 +1,9 @@
 import CartCheckoutActionTypes from './cartcheckout.types';
 
+var data = JSON.parse(localStorage.getItem('checkouts'))
+
 const INITIAL_STATE = {
-    cartCheckouts: []
+    cartCheckouts: data ? data : []
 };
 
 
@@ -40,22 +42,27 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
 const cartCheckoutReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case CartCheckoutActionTypes.ADD_TO_CART:
-            console.log(1)
+            var checkouts = addItemToCart(state.cartCheckouts, action.payload);
+            localStorage.setItem('checkouts',JSON.stringify(checkouts))
             return {
                 ...state,
-                cartCheckouts: addItemToCart(state.cartCheckouts, action.payload)
+                cartCheckouts: checkouts
             }
         case CartCheckoutActionTypes.CLEAR_ITEM_FROM_CART:
+            var checkouts = state.cartCheckouts.filter(
+                cartCheckout => cartCheckout.id !== action.payload.id
+            )
+            localStorage.setItem('checkouts',JSON.stringify(checkouts))
             return {
                 ...state,
-                cartCheckouts: state.cartCheckouts.filter(
-                    cartCheckout => cartCheckout.id !== action.payload.id
-                )
+                cartCheckouts: checkouts
             }
         case CartCheckoutActionTypes.REMOVE_ITEM:
+            var checkouts = removeItemFromCart(state.cartCheckouts, action.payload)
+            localStorage.setItem('checkouts',JSON.stringify(checkouts))
             return {
                 ...state,
-                cartCheckouts: removeItemFromCart(state.cartCheckouts, action.payload)
+                cartCheckouts: checkouts
             }
         default:
             return state;
